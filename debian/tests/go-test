@@ -1,0 +1,17 @@
+#!/bin/bash
+set -e
+
+sed -i 's/peer$/trust/' /etc/postgresql/*/main/pg_hba.conf
+
+service postgresql start
+trap 'service postgresql stop' EXIT
+
+export PGHOST=/var/run/postgresql
+export PGUSER=postgres
+
+psql -c 'create database pqgotest' -U postgres
+psql -c 'create user pqgossltest' -U postgres
+psql -c 'create user pqgosslcert' -U postgres
+
+export GOPATH=/usr/share/gocode
+go test -v github.com/lib/pq/...

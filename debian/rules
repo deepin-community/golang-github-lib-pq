@@ -1,0 +1,8 @@
+#!/usr/bin/make -f
+
+override_dh_auto_test:
+	# lots of tests require a running PostgreSQL instance, so we skip them
+	# see DEP8 :)
+
+%:
+	dh $@ --buildsystem=golang --with=golang

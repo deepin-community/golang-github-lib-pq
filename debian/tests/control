@@ -1,0 +1,5 @@
+Tests: go-test
+Depends: golang-go,
+         postgresql,
+         @,
+Restrictions: needs-root

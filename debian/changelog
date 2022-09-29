@@ -1,0 +1,48 @@
+golang-github-lib-pq (1.3.0-1) unstable; urgency=medium
+
+  [ Daniel Swarbrick ]
+  * New upstream release.
+  * Add myself to uploaders.
+  * Update Standards-Version to 4.4.1 (no changes).
+  * Update debhelper version to 12.
+  * d/gbp.conf: stop using pristine-tar.
+  * Add debian/watch file.
+
+ -- Daniel Swarbrick <daniel.swarbrick@cloud.ionos.com>  Fri, 17 Jan 2020 13:05:51 +0000
+
+golang-github-lib-pq (0.0~git20151007.0.ffe986a-2) unstable; urgency=medium
+
+  [ Paul Tagliamonte ]
+  * Team upload.
+  * Use a secure transport for the Vcs-Git and Vcs-Browser URL
+  * Remove Built-Using from arch:all -dev package
+
+  [ Alexandre Viau ]
+  * Point Vcs-* urls to salsa.debian.org.
+
+  [ Dr. Tobias Quathamer ]
+  * Use debhelper v11
+  * Use golang-any instead of golang-go
+  * Update team name and address
+  * Update to Standards-Version 4.2.1
+    - Use HTTPS URL for d/copyright
+    - Use Priority: optional
+
+ -- Dr. Tobias Quathamer <toddy@debian.org>  Thu, 29 Nov 2018 21:38:51 +0100
+
+golang-github-lib-pq (0.0~git20151007.0.ffe986a-1) unstable; urgency=medium
+
+  * Update to newer upstream snapshot (Closes: #801807)
+  * Bring package under the pkg-go umbrella
+  * Update packaging to use dh-golang instead of being totally ad-hoc
+  * Rename source/binary packages in line with pkg-go policy
+  * Add DEP8 test to run the package tests (which require a running Postgres
+    instance)
+
+ -- Tianon Gravi <tianon@debian.org>  Thu, 15 Oct 2015 14:28:28 -0700
+
+golang-pq-dev (0.0~git20130606-1) unstable; urgency=low
+
+  * Initial release (Closes: #714451)
+
+ -- Michael Stapelberg <stapelberg@debian.org>  Sat, 29 Jun 2013 16:19:25 +0200

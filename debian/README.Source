@@ -1,0 +1,2 @@
+git clone git://github.com/lib/pq golang-pq-dev
+tar czvf golang-pq-dev_0.0~git20130606.orig.tar.gz golang-pq-dev --exclude=.git --exclude=.gitignore --exclude=.travis.yml

@@ -1,0 +1,40 @@
+Source: golang-github-lib-pq
+Section: devel
+Priority: optional
+Testsuite: autopkgtest-pkg-go
+Maintainer: Debian Go Packaging Team <team+pkg-go@tracker.debian.org>
+Uploaders: Michael Stapelberg <stapelberg@debian.org>,
+           Tianon Gravi <tianon@debian.org>,
+           Daniel Swarbrick <daniel.swarbrick@cloud.ionos.com>,
+Build-Depends: debhelper-compat (= 12),
+               dh-golang,
+               golang-any,
+Standards-Version: 4.4.1
+Rules-Requires-Root: no
+Homepage: https://github.com/lib/pq
+Vcs-Browser: https://salsa.debian.org/go-team/packages/golang-github-lib-pq
+Vcs-Git: https://salsa.debian.org/go-team/packages/golang-github-lib-pq.git
+XS-Go-Import-Path: github.com/lib/pq
+
+Package: golang-github-lib-pq-dev
+Architecture: all
+Depends: ${misc:Depends},
+         ${shlibs:Depends},
+Replaces: golang-pq-dev (<< 0.0~git20151007.0.ffe986a-1~),
+Breaks: golang-pq-dev (<< 0.0~git20151007.0.ffe986a-1~),
+Provides: golang-pq-dev,
+Description: Pure Go Postgres driver for Go’s database/sql package
+ After importing this package, you can connect to a Postgres database from your
+ Go programs. This package does not depend on libpq-dev and does not need cgo,
+ making it suitable for use when cross-compiling.
+ .
+ This package contains the source.
+
+Package: golang-pq-dev
+Section: oldlibs
+Architecture: all
+Depends: golang-github-lib-pq-dev,
+         ${misc:Depends},
+Description: Transitional package for golang-github-lib-pq-dev
+ This is a transitional package to ease upgrades to the golang-github-lib-pq-dev
+ package. It can safely be removed.
